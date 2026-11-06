@@ -24,7 +24,7 @@ Windows may show "Windows protected your PC" the first time you run the app. Cli
 
 ## Install by hand
 
-1. Download `BepInEx-Base.zip` and the `.dll` of each mod you want from the [latest release](../../releases/latest).
+1. Download the `.dll` of each mod you want from the [latest release](../../releases/latest), and `BepInEx-Base.zip` from the link in its notes.
 2. In Steam, right-click Synthetik 2 and pick **Manage** and then **Browse local files**.
 3. Open `BepInEx-Base.zip` and drag everything inside it into the game folder. Don't use "Extract All", it puts the files one folder too deep.
 4. Put the mod `.dll` files in `BepInEx\plugins` inside the game folder.
@@ -36,10 +36,10 @@ To remove a mod, delete its `.dll` from `BepInEx\plugins`. Steam's **Verify inte
 Needs the .NET 8 SDK and Python. The mods build against the game classes BepInEx generates, so install BepInEx and start the game once first.
 
 ```
-python pack.py <BepInEx-Unity.IL2CPP-win-x64 zip> <BepInEx version>
+python pack.py <BepInEx-Unity.IL2CPP-win-x64 zip> <BepInEx version> <release tag>
 ```
 
-This builds the app and every mod into `builds\`, together with `mods.json`, the list the app reads. Upload everything in `builds\` to a new release.
+This builds the app and every mod into `builds\`, together with `mods.json`, the list the app reads, and writes `release-notes.md`. `BepInEx-Base.zip` is only added when the BepInEx version is new; otherwise the app keeps getting it from the release it came out in. Upload `builds\` to a new release with those notes.
 
 The mods use [BepInEx 6](https://github.com/BepInEx/BepInEx) and [Harmony](https://github.com/pardeike/Harmony). Nothing on disk is changed besides the files they add to the game folder.
 

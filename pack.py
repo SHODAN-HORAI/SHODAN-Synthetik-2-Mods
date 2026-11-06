@@ -37,6 +37,7 @@ def main(bie_zip: str, bie_version: str):
         for item in src.infolist():
             if item.filename != "changelog.txt":
                 dst.writestr(item, src.read(item))
+        dst.write(ROOT / "ThirdParty/BepInEx-LICENSE.txt", "BepInEx/LICENSE-BepInEx.txt")  # LGPL-2.1 asks for its text
 
     app_dir, app_version = build(ROOT / "Installer/SHODANSynthetik2.csproj", "net48")
     manifest = {

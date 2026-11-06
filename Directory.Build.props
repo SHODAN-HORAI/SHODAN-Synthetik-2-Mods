@@ -1,0 +1,8 @@
+<Project>
+  <!-- Keep local folder paths out of the built files -->
+  <PropertyGroup>
+    <DebugType>none</DebugType>
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=.</PathMap>
+  </PropertyGroup>
+</Project>
